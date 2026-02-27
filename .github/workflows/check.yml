@@ -28,6 +28,9 @@ jobs:
           restore-keys: |
             availability-state
 
+      - name: Ensure state dir exists   # ← NEU
+        run: mkdir -p .state
+
       - name: Run checker
         env:
           SMTP_USER: ${{ secrets.SMTP_USER }}
